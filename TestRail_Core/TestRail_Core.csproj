@@ -39,10 +39,8 @@
 
     <ItemGroup>
       <Folder Include="Clients\" />
-      <Folder Include="Pages\" />
       <Folder Include="Resources\" />
       <Folder Include="Services\" />
-      <Folder Include="Steps\" />
       <Folder Include="Tests\" />
     </ItemGroup>
 
