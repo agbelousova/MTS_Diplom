@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTS_Diplom", "MTS_Diplom\MTS_Diplom.csproj", "{B0607E3C-34D0-445F-8ACF-A59B7419FD8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestRail_Core", "TestRail_Core\TestRail_Core.csproj", "{B0607E3C-34D0-445F-8ACF-A59B7419FD8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
