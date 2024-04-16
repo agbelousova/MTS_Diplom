@@ -38,14 +38,20 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Clients\" />
-      <Folder Include="Resources\" />
-      <Folder Include="Services\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <None Remove="appsettings.json" />
       <Content Include="appsettings.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Resources\Section.json" />
+      <Content Include="Resources\Section.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Resources\test.jpg" />
+      <Content Include="Resources\test.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="NLog.config" />
+      <Content Include="NLog.config">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
     </ItemGroup>
