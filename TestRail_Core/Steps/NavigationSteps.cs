@@ -48,6 +48,7 @@ public class NavigationSteps : BaseStep
         return Login<LoginPage>(user);
     }
     
+    [AllureStep]
     public T Login<T>(User user) where T : BasePage
     {
         LoginPage = new LoginPage(Driver);

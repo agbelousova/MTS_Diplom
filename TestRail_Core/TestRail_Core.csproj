@@ -41,7 +41,6 @@
       <Folder Include="Clients\" />
       <Folder Include="Resources\" />
       <Folder Include="Services\" />
-      <Folder Include="Tests\" />
     </ItemGroup>
 
     <ItemGroup>
