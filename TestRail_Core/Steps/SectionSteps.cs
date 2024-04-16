@@ -1,11 +1,13 @@
 ﻿using MTS_Diplom.Models;
 using MTS_Diplom.Pages.SectionPages;
+using NUnit.Allure.Attributes;
 using OpenQA.Selenium;
 
 namespace MTS_Diplom.Steps;
 
 public class SectionSteps(IWebDriver driver) : BaseStep(driver)
 {
+    [AllureStep]
     public SectionBasePage AddSection(Section _section)
     {
         SectionBasePage = new SectionBasePage(Driver, true);
@@ -23,6 +25,7 @@ public class SectionSteps(IWebDriver driver) : BaseStep(driver)
         return new SectionBasePage(Driver);
     }
 
+    [AllureStep]
     public string AddFaildSection(Section _section)
     {
         SectionBasePage = new SectionBasePage(Driver, true);
@@ -33,6 +36,8 @@ public class SectionSteps(IWebDriver driver) : BaseStep(driver)
         
         return SectionBasePage.GetErrorLabelText();
     }
+    
+    [AllureStep]
     public string PopUpMessage()
     {
         SectionBasePage = new SectionBasePage(Driver, true);

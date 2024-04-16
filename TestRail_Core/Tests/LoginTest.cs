@@ -5,6 +5,7 @@ namespace MTS_Diplom.Tests;
 public class LoginTest : BaseTest
 {
     [Test]
+    [Order(1)]
     [Category("Positive")]
     public void SuccessfulLoginTest()
     {
@@ -17,6 +18,7 @@ public class LoginTest : BaseTest
     }
     
     [Test]
+    [Order(2)]
     [Category("Negative")]
     public void FailedLoginTest()
     {

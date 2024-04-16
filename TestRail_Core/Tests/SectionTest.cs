@@ -1,10 +1,12 @@
 ﻿using MTS_Diplom.Models;
+using NUnit.Allure.Core;
 
 namespace MTS_Diplom.Tests;
 
 public class SectionTest: BaseTest
 {
     [Test]
+    [Order(1)]
     [Category("Positive")]
     public void SuccessfulAddSectionTest()
     {
@@ -23,6 +25,7 @@ public class SectionTest: BaseTest
     }
 
     [Test]
+    [Order(2)]
     [Category("Positive")]
     public void PopUpMessageTest()
     {
@@ -32,6 +35,7 @@ public class SectionTest: BaseTest
     }
 
     [Test]
+    [Order(3)]
     [Category("Positive")]
     public void DeleteSectionTest()
     {
@@ -48,6 +52,7 @@ public class SectionTest: BaseTest
     }
     
     [Test]
+    [Order(4)]
     [Category("Negative")]
     public void LimitValueTest()
     {
@@ -73,6 +78,7 @@ public class SectionTest: BaseTest
     }
     
     [Test]
+    [Order(5)]
     [Category("Negative")]
     public void FailedAddSectionTest()
     {
