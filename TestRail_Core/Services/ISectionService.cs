@@ -1,8 +1,9 @@
 ﻿using MTS_Diplom.Models;
+using RestSharp;
 
 namespace MTS_Diplom.Services;
 
 public interface ISectionService
 {
-    Task<Section> GetSection(string sectionId);
+    Task<RestResponse> GetSection(string sectionId);
 }

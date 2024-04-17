@@ -2,6 +2,7 @@
 using RestSharp;
 using MTS_Diplom.Clients;
 using MTS_Diplom.Models;
+using NUnit.Allure.Attributes;
 
 namespace MTS_Diplom.Services;
 public class SectionService : ISectionService, IDisposable
@@ -13,12 +14,13 @@ public class SectionService : ISectionService, IDisposable
         _client = client;
     }
     
-    public Task<Section> GetSection(string sectionId)
+    [AllureStep("Get Section By Id")]
+    public Task<RestResponse> GetSection(string sectionId)
     {
         var request = new RestRequest("index.php?/api/v2/get_section/{section_id}")
             .AddUrlSegment("section_id", sectionId);
         
-        return _client.ExecuteAsync<Section>(request);
+        return _client.ExecuteAsync(request);
     }
     public void Dispose()
     {

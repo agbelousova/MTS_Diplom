@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using Allure.Net.Commons;
 using MTS_Diplom.Helpers.Configurator;
 using NLog;
 using RestSharp;
@@ -51,6 +52,7 @@ public sealed class RestClientExtended
                 $"Error retrieving response. Check inner details for more info. \n{response.ErrorException.Message}");
         }
         
+        AllureApi.Step($"Request finished with status code: {response.StatusCode}");
         _logger.Debug($"Request finished with status code: {response.StatusCode}");
 
         if (!string.IsNullOrEmpty(response.Content))
