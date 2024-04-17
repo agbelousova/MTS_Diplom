@@ -1,0 +1,6 @@
+2024/04/17 20:12:34.571|DEBUG|Get request to: index.php?/api/v2/get_section/{section_id} 
+2024/04/17 20:12:34.837|ERROR|Error retrieving response. Check inner details for more info. 
+Request failed with status code BadRequest 
+2024/04/17 20:12:34.837|DEBUG|Request finished with status code: BadRequest 
+2024/04/17 20:12:34.837|DEBUG|{"error":"Field :section_id is not a valid section."} 
+2024/04/17 20:12:34.837|INFO|True 
