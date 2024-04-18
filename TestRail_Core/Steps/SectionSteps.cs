@@ -18,7 +18,7 @@ public class SectionSteps(IWebDriver driver) : BaseStep(driver)
         SectionBasePage.DescriptionSection.SendKeys(_section.Description);
         
         //загрузка файла
-        //SectionBasePage.AddFile();
+        SectionBasePage.AddFile();
         
         SectionBasePage.AddNewSectionButton.Click();
         

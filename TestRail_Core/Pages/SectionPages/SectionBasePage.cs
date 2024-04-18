@@ -1,4 +1,5 @@
-﻿using MTS_Diplom.Elements;
+﻿using System.Reflection;
+using MTS_Diplom.Elements;
 using MTS_Diplom.Models;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
@@ -25,6 +26,13 @@ public class SectionBasePage : BasePage
     private static readonly By DeleteSectionButtonBy = By.ClassName("icon-small-delete");
     private static readonly By DeleteCheckboxBy = By.CssSelector("[data-testid='caseFieldsTabDeleteDialogCheckbox']");
     private static readonly By ErrorMessageBy = By.Id("editSectionErrors");
+    
+    //для вставки value файла
+    private static readonly By InputFileBy = By.Id("newAttachments");
+    //элемент в котором хранится код вставляемого файла
+    private static readonly By PuthFileBy = By.XPath("//div[@id='attachmentsNewList']//div[contains(@id,'libraryAttachment-')]");
+    
+    
     public SectionBasePage(IWebDriver driver) : base(driver)
     {
     }
@@ -50,7 +58,8 @@ public class SectionBasePage : BasePage
     public UIElement DeleteCheckbox => new(Driver, DeleteCheckboxBy);
     public UIElement ErrorMessage => new(Driver, ErrorMessageBy);
     public string GetErrorLabelText() => WaitsHelper.WaitForVisibilityLocatedBy(ErrorMessageBy).Text.Trim();
-    
+    public UIElement InputFile => new(Driver, InputFileBy);
+    public UIElement PuthFile => new(Driver, PuthFileBy);
     public UIElement PopUpMessage => new(Driver, PopUpMessageBy);
     //методы
     public bool FindNewSection(string nameSection)
@@ -93,11 +102,10 @@ public class SectionBasePage : BasePage
         WaitsHelper.WaitForVisibilityLocatedBy(By.CssSelector("[data-testid='caseFieldsTabDeleteDialogButtonOk']")).Click();
     }
     
-    /*
     public void AddFile()
     {
-        try
-        {
+      //  try
+      //  {
             AddFileIcon.Click();
             var fileUploadPath = WaitsHelper.WaitForExists(By.XPath("//input[@id='import']"));
             Thread.Sleep(3000);
@@ -107,19 +115,26 @@ public class SectionBasePage : BasePage
             string filePath = Path.Combine(assemblyPath, "Resources", "test.jpeg");
 
             fileUploadPath.SendKeys(filePath);
-            Thread.Sleep(3000);
-            //SelectUploadFile.Click();
-            //WaitsHelper.WaitForExists(By.Id("attachmentNewSubmit")).Submit();
+           // Thread.Sleep(50000);
 
-            // Assert.That(Driver.FindElement(DeleteFileButtonBy).Displayed);
+            string puth = PuthFile.GetAttribute("id");
+            Console.WriteLine($"Файл ---- {puth}");
+            puth = puth.Replace("libraryAttachment-", "");
+            Console.WriteLine($"Путь после удаления --{puth}");
+            InputFile.SendKeys(puth);
+            Console.WriteLine($"Value={InputFile.GetAttribute("value")}");
+           // SelectUploadFile.Click();
+            //WaitsHelper.WaitForExists(By.Id("attachmentNewSubmit")).Submit();
+            
+            Assert.That(Driver.FindElement(DeleteFileButtonBy).Displayed);
 
             AttachFileButton.Click();
-        }
-        catch (Exception e)
+     //   }
+      /*  catch (Exception e)
         {
             Console.WriteLine("Файл не загружен!!!");
             throw;
         }
+        */
     }
-    */
 }

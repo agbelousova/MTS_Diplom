@@ -47,9 +47,6 @@
       </Content>
       <None Remove="Resources\Section.json" />
       <None Remove="Resources\test.jpg" />
-      <Content Include="Resources\test.jpg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
       <None Remove="NLog.config" />
       <Content Include="NLog.config">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -64,6 +61,10 @@
       <None Remove="Resources\SectionGetNegative.json" />
       <None Remove="Resources\SectionMilestone.json" />
       <None Remove="Resources\MilestoneGet.json" />
+      <None Remove="Resources\test.jpeg" />
+      <Content Include="Resources\test.jpeg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

@@ -33,8 +33,7 @@ public class SectionTest: BaseTest
         
         Assert.That(_sectionSteps.PopUpMessage(), Is.EqualTo("Opens a print view of this test case repository."));
     }
-
-    /*
+    
     [Test]
     [Order(3)]
     [Category("Positive")]
@@ -51,7 +50,6 @@ public class SectionTest: BaseTest
         var sectionBasePage = _sectionSteps.AddSection(section);
         sectionBasePage.DeleteSection(section.Name);
     }
-    */
     
     [Test]
     [Order(4)]
