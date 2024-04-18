@@ -1,0 +1,4 @@
+2024/04/18 15:58:22.857|DEBUG|Post request to: index.php?/api/v2/delete_case/{case_id} 
+2024/04/18 15:58:22.857|DEBUG|body: {} 
+2024/04/18 15:58:23.142|DEBUG|Request finished with status code: OK 
+2024/04/18 15:58:23.142|INFO|OK 
