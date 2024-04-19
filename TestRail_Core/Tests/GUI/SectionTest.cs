@@ -48,7 +48,7 @@ public class SectionTest: BaseTest
         };
 
         var sectionBasePage = _sectionSteps.AddSection(section);
-        sectionBasePage.DeleteSection(section.Name);
+        sectionBasePage.DeleteIdSection(section);
     }
     
     [Test]

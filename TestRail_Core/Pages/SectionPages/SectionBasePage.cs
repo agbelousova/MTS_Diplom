@@ -61,6 +61,7 @@ public class SectionBasePage : BasePage
     public UIElement InputFile => new(Driver, InputFileBy);
     public UIElement PuthFile => new(Driver, PuthFileBy);
     public UIElement PopUpMessage => new(Driver, PopUpMessageBy);
+
     //методы
     public bool FindNewSection(string nameSection)
     {
@@ -77,64 +78,81 @@ public class SectionBasePage : BasePage
         return flag;
     }
     
-    public string FindNameSection(Section section)
+   
+    //метод для удаления секции по ид
+    public void DeleteIdSection(Section section)
     {
-        foreach (var name in SectionNewTitle.GetText())
-        {
-            if (name.Length == section.Name.Length)
-            {
-                return name;
-            }
-        }
-        return "error";
-    }
-    public void DeleteSection(string name)
-    {
-        var actions = new Actions(Driver);
-//MoveToElement(WaitsHelper.FluentWaitForElement(By.XPath($"//span[@class = 'title' and contains(text(),'{name}')]/parent::div[@class='grid-title']")))
-        actions
-            .MoveToElement(WaitsHelper.FluentWaitForElement(By.CssSelector("[class^='grid-title']")))
-            .Click(WaitsHelper.WaitForVisibilityLocatedBy(By.CssSelector("[class^='icon-small-delete']")))
-            .Build()
-            .Perform();
-        
-        DeleteCheckbox.Click();
-        WaitsHelper.WaitForVisibilityLocatedBy(By.CssSelector("[data-testid='caseFieldsTabDeleteDialogButtonOk']")).Click();
-    }
-    
-    public void AddFile()
-    {
-      //  try
-      //  {
-            AddFileIcon.Click();
-            var fileUploadPath = WaitsHelper.WaitForExists(By.XPath("//input[@id='import']"));
-            Thread.Sleep(3000);
-            //AddNewFileButton.Click();
+        /*
+       foreach (var name in SectionNewTitle.GetText())
+       {
+           if (name.Length == section.Name.Length)
+           {
+               var id = SectionNewTitle.GetId(name);
 
-            string assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            string filePath = Path.Combine(assemblyPath, "Resources", "test.jpeg");
+               Console.WriteLine(id);
 
-            fileUploadPath.SendKeys(filePath);
-           // Thread.Sleep(50000);
+               var actions = new Actions(Driver);
+               Thread.Sleep(50000);
+               actions
+                   .MoveToElement(WaitsHelper.WaitForVisibleElementsLocatedBy(By.CssSelector($"#{id} > div.grid-title")))
+                   .Click(WaitsHelper.WaitForExists(By.CssSelector($"#{id} > div.grid-title > a:nth-child(4) > div")))
+                   .Build()
+                   .Perform();
+               Thread.Sleep(5000);
+               DeleteCheckbox.Click();
+               WaitsHelper.WaitForVisibilityLocatedBy(
+                   By.CssSelector("[data-testid='caseFieldsTabDeleteDialogButtonOk']")).Click();
+           }
+       }
+       */
+   }
 
-            string puth = PuthFile.GetAttribute("id");
-            Console.WriteLine($"Файл ---- {puth}");
-            puth = puth.Replace("libraryAttachment-", "");
-            Console.WriteLine($"Путь после удаления --{puth}");
-            InputFile.SendKeys(puth);
-            Console.WriteLine($"Value={InputFile.GetAttribute("value")}");
-           // SelectUploadFile.Click();
-            //WaitsHelper.WaitForExists(By.Id("attachmentNewSubmit")).Submit();
-            
-            Assert.That(Driver.FindElement(DeleteFileButtonBy).Displayed);
+   public string FindNameSection(Section section)
+   {
+       foreach (var name in SectionNewTitle.GetText())
+       {
+           if (name.Length == section.Name.Length)
+           {
+               return name;
+           }
+       }
+       return "Секция ТК не найдена!";
+   }
+   
+   /*
+   public void AddFile()
+   {
+     //  try
+     //  {
+           AddFileIcon.Click();
+           var fileUploadPath = WaitsHelper.WaitForExists(By.XPath("//input[@id='import']"));
+           Thread.Sleep(3000);
+           //AddNewFileButton.Click();
 
-            AttachFileButton.Click();
-     //   }
-      /*  catch (Exception e)
-        {
-            Console.WriteLine("Файл не загружен!!!");
-            throw;
-        }
-        */
-    }
+           string assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+           string filePath = Path.Combine(assemblyPath, "Resources", "test.jpeg");
+
+           fileUploadPath.SendKeys(filePath);
+          // Thread.Sleep(50000);
+
+           string puth = PuthFile.GetAttribute("id");
+           Console.WriteLine($"Файл ---- {puth}");
+           puth = puth.Replace("libraryAttachment-", "");
+           Console.WriteLine($"Путь после удаления --{puth}");
+           InputFile.SendKeys(puth);
+           Console.WriteLine($"Value={InputFile.GetAttribute("value")}");
+          // SelectUploadFile.Click();
+           //WaitsHelper.WaitForExists(By.Id("attachmentNewSubmit")).Submit();
+
+           Assert.That(Driver.FindElement(DeleteFileButtonBy).Displayed);
+
+           AttachFileButton.Click();
+    //   }
+     /*  catch (Exception e)
+       {
+           Console.WriteLine("Файл не загружен!!!");
+           throw;
+       }
+
+   }*/
 }
