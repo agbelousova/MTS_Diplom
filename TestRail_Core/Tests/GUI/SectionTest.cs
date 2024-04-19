@@ -65,7 +65,6 @@ public class SectionTest: BaseTest
             ,
             Description = "Description 123"
         };
-
         var sectionBasePage = _sectionSteps.AddSection(section);
         
         if (sectionBasePage.FindNameSection(section) == "error")
