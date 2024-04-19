@@ -116,7 +116,7 @@ public class SectionBasePage : BasePage
                return name;
            }
        }
-       return "Секция ТК не найдена!";
+       return "error";
    }
    
    /*

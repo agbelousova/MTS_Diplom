@@ -8,6 +8,7 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::B0607E3C-34D0-445F-8ACF-A59B7419FD8B::net8.0::MTS_Diplom.Tests.SectionTest.SuccessfulAddSectionTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::B0607E3C-34D0-445F-8ACF-A59B7419FD8B::net8.0::MTS_Diplom.Tests.SectionTest.DeleteTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::B0607E3C-34D0-445F-8ACF-A59B7419FD8B::net8.0::MTS_Diplom.Tests.SectionTest.LimitValueTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e726d9de_002Dc8d0_002D4115_002Da246_002Df3ef5f5ff9ab/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetSectionTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
