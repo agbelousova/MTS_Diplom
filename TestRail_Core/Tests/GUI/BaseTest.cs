@@ -1,3 +1,4 @@
+using Allure.Net.Commons;
 using MTS_Diplom.Core;
 using MTS_Diplom.Helpers.Configurator;
 using MTS_Diplom.Models;
@@ -40,7 +41,7 @@ public class BaseTest
     [TearDown]
     public void TearDown()
     {
-        /*
+        
         // Проверка, был ли тест сброшен
         try
         {
@@ -59,7 +60,7 @@ public class BaseTest
             Console.WriteLine(e);
             throw;
         }
-        */
+        
         Driver.Quit();
     }
 }

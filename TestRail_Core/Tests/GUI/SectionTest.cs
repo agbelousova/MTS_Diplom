@@ -1,13 +1,17 @@
 ﻿using MTS_Diplom.Models;
+using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 
 namespace MTS_Diplom.Tests;
 
+[AllureSuite("GUI Tests")]
 public class SectionTest: BaseTest
 {
     [Test]
     [Order(1)]
     [Category("Positive")]
+    [AllureSubSuite("Successful Add Section Test")]
+    [AllureFeature("Positive GUI Tests")]
     public void SuccessfulAddSectionTest()
     {
         _navigationSteps.SuccessfulLogin(Admin);
@@ -27,6 +31,8 @@ public class SectionTest: BaseTest
     [Test]
     [Order(2)]
     [Category("Positive")]
+    [AllureSubSuite("Successful PopUp Message Test")]
+    [AllureFeature("Positive GUI Tests")]
     public void PopUpMessageTest()
     {
         _navigationSteps.SuccessfulLogin(Admin);
@@ -37,6 +43,8 @@ public class SectionTest: BaseTest
     [Test]
     [Order(3)]
     [Category("Positive")]
+    [AllureSubSuite("Successful Delete Section Test")]
+    [AllureFeature("Positive GUI Tests")]
     public void DeleteSectionTest()
     {
         _navigationSteps.SuccessfulLogin(Admin);
@@ -54,6 +62,8 @@ public class SectionTest: BaseTest
     [Test]
     [Order(4)]
     [Category("Negative")]
+    [AllureSubSuite("Successful Limit Value Test")]
+    [AllureFeature("Negative GUI Tests")]
     public void LimitValueTest()
     {
         _navigationSteps.SuccessfulLogin(Admin);
@@ -79,11 +89,13 @@ public class SectionTest: BaseTest
     [Test]
     [Order(5)]
     [Category("Negative")]
+    [AllureSubSuite("Failed Add Section Test")]
+    [AllureFeature("Positive GUI Tests")]
     public void FailedAddSectionTest()
     {
         _navigationSteps.SuccessfulLogin(Admin);
-        
-        Assert.That(
+
+            Assert.That(
             _sectionSteps
                 .AddFaildSection(new Section()
                 {

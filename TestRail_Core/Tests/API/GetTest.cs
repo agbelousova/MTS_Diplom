@@ -5,10 +5,12 @@ using MTS_Diplom.Models;
 using Newtonsoft.Json;
 using RestSharp;
 using NLog;
+using NUnit.Allure.Attributes;
 using TestRailComplexApi.Models;
 
 namespace MTS_Diplom.Tests.API;
 
+[AllureSuite("API Tests")]
 public class GetTest : BaseApiTest
 {
     private readonly Logger _logger = LogManager.GetCurrentClassLogger();
@@ -19,6 +21,10 @@ public class GetTest : BaseApiTest
     [Test]
     [Order(1)]
     [Category("NFE")]
+    [AllureSubSuite("Section API Tests")]
+    [AllureFeature("API GET Method")]
+    [AllureFeature("API NFE Tests")]
+    
     public void GetSectionTest()
     {
         AllureApi.Step("GetSectionTest запущен.");
@@ -49,6 +55,9 @@ public class GetTest : BaseApiTest
     [Test]
     [Order(5)]
     [Category("NFE")]
+    [AllureSubSuite("Section API Tests")]
+    [AllureFeature("API POST Method")]
+    [AllureFeature("API NFE Tests")]
     public void AddCaseTest()
     {
         _case = new Case()
@@ -71,6 +80,9 @@ public class GetTest : BaseApiTest
     [Test]
     [Order(6)]
     [Category("NFE")]
+    [AllureSubSuite("Case API Tests")]
+    [AllureFeature("API GET Method")]
+    [AllureFeature("API NFE Tests")]
     public void GetCaseTest()
     {
         AllureApi.Step("GetCaseTest запущен.");
@@ -92,6 +104,9 @@ public class GetTest : BaseApiTest
     [Test]
     [Order(7)]
     [Category("NFE")]
+    [AllureSubSuite("Delete Case Tests")]
+    [AllureFeature("API POST Method")]
+    [AllureFeature("API NFE Tests")]
     public void DeleteCaseTest()
     {
         AllureApi.Step("DeleteCaseTest запущен.");
@@ -103,6 +118,9 @@ public class GetTest : BaseApiTest
     [Test]
     [Order(4)]
     [Category("NFE")]
+    [AllureSubSuite("Get Milestone Tests")]
+    [AllureFeature("API GET Method")]
+    [AllureFeature("API NFE Tests")]
     public void GetMilestoneTest()
     {
         _milestone = new Milestone
@@ -133,6 +151,9 @@ public class GetTest : BaseApiTest
     [Test]
     [Order(2)]
     [Category("AFE")]
+    [AllureSubSuite("Get Section Negative Tests")]
+    [AllureFeature("API GET Method")]
+    [AllureFeature("API AFE Tests")]
     public void GetSectionNegativeTest()
     {
         AllureApi.Step("GetSectionNegativeTest запущен.");
@@ -147,6 +168,9 @@ public class GetTest : BaseApiTest
     [Test]
     [Order(3)]
     [Category("AFE")]
+    [AllureSubSuite("Get Milestone Negative Tests")]
+    [AllureFeature("API GET Method")]
+    [AllureFeature("API AFE Tests")]
     public void GetMilestoneNegativeTest()
     {
         AllureApi.Step("GetMilestoneNegativeTest запущен.");

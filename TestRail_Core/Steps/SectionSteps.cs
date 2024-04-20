@@ -33,8 +33,9 @@ public class SectionSteps(IWebDriver driver) : BaseStep(driver)
         
         SectionBasePage.AddSectionButton.Click();
         SectionBasePage.DescriptionSection.SendKeys(_section.Description);
+       // Thread.Sleep(3000);
         SectionBasePage.AddNewSectionButton.Click();
-        
+       // Thread.Sleep(3000);
         return SectionBasePage.GetErrorLabelText();
     }
     
