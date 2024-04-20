@@ -1,3 +1,4 @@
+using System.Text;
 using Allure.Net.Commons;
 using MTS_Diplom.Core;
 using MTS_Diplom.Helpers.Configurator;
@@ -52,7 +53,9 @@ public class BaseTest
                 byte[] screenshotBytes = screenshot.AsByteArray;
 
                 // Прикрепление скриншота к отчету Allure
-                AllureLifecycle.Instance.AddAttachment("Screenshot", "image/png", screenshotBytes);
+                //AllureLifecycle.Instance.AddAttachment("Screenshot", "image/png", screenshotBytes);
+                AllureApi.AddAttachment("Screenshot", "image/png", screenshotBytes);
+                AllureApi.AddAttachment("error.txt", "text/plain", Encoding.UTF8.GetBytes(TestContext.CurrentContext.Result.Message));
             }
         }
         catch (Exception e)
