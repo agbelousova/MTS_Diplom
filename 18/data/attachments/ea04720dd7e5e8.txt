@@ -1,0 +1,13 @@
+2024/04/20 10:18:48.826|INFO|{
+  "name": "Section for TK",
+  "id": 76,
+  "description": "Description 1",
+  "suite_id": 1,
+  "depth": 0,
+  "display_order": 33
+} 
+2024/04/20 10:18:48.847|INFO|Section { Name = Section for TK, Id = 76, Description = Description 1, SuiteId = 0, DisplayOrder = , Depth = 0 } 
+2024/04/20 10:18:48.867|DEBUG|Get request to: index.php?/api/v2/get_section/{section_id} 
+2024/04/20 10:18:49.392|DEBUG|Request finished with status code: OK 
+2024/04/20 10:18:49.392|DEBUG|{"id":76,"suite_id":1,"name":"Section for TK","description":"Description 1","parent_id":null,"display_order":33,"depth":0} 
+2024/04/20 10:18:49.392|INFO|RestSharp.RestResponse 
