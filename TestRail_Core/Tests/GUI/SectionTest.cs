@@ -25,7 +25,7 @@ public class SectionTest: BaseTest
         var sectionBasePage = _sectionSteps.AddSection(section);
         Assert.That(sectionBasePage.FindNewSection(section.Name), Is.EqualTo(true));
         
-        Console.WriteLine(_sectionSteps.PopUpMessage()); 
+        //Console.WriteLine(_sectionSteps.PopUpMessage()); 
     }
 
     [Test]

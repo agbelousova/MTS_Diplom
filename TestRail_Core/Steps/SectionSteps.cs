@@ -15,11 +15,12 @@ public class SectionSteps(IWebDriver driver) : BaseStep(driver)
         
         //создание новой секции для тестов
         SectionBasePage.AddSectionButton.Click();
-        SectionBasePage.NameSection.SendKeys(_section.Name);
         SectionBasePage.DescriptionSection.SendKeys(_section.Description);
         
         //загрузка файла
-        //SectionBasePage.AddFile();
+        SectionBasePage.AddFile();
+        
+        SectionBasePage.NameSection.SendKeys(_section.Name);
         
         SectionBasePage.AddNewSectionButton.Click();
         

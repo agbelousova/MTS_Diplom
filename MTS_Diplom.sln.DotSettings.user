@@ -1,17 +1,17 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=0a8f44cd_002Dce26_002D49a5_002Da60a_002D646eda8a2b57/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="SuccessfulLoginTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::B0607E3C-34D0-445F-8ACF-A59B7419FD8B::net8.0::MTS_Diplom.Tests.API.GetTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::B0607E3C-34D0-445F-8ACF-A59B7419FD8B::net8.0::MTS_Diplom.Tests.SectionTest.FailedAddSectionTest&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=0a8f44cd_002Dce26_002D49a5_002Da60a_002D646eda8a2b57/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="SuccessfulLoginTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::B0607E3C-34D0-445F-8ACF-A59B7419FD8B::net8.0::MTS_Diplom.Tests.API.GetTest&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B0607E3C-34D0-445F-8ACF-A59B7419FD8B::net8.0::MTS_Diplom.Tests.SectionTest.FailedAddSectionTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=73d870d7_002Da1c8_002D4c3c_002Db055_002Dd26b9d7af547/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="SuccessfulAddSectionTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::B0607E3C-34D0-445F-8ACF-A59B7419FD8B::net8.0::MTS_Diplom.Tests.SectionTest.SuccessfulAddSectionTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::B0607E3C-34D0-445F-8ACF-A59B7419FD8B::net8.0::MTS_Diplom.Tests.SectionTest.DeleteTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::B0607E3C-34D0-445F-8ACF-A59B7419FD8B::net8.0::MTS_Diplom.Tests.SectionTest.LimitValueTest&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=73d870d7_002Da1c8_002D4c3c_002Db055_002Dd26b9d7af547/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="SuccessfulAddSectionTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::B0607E3C-34D0-445F-8ACF-A59B7419FD8B::net8.0::MTS_Diplom.Tests.SectionTest.SuccessfulAddSectionTest&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B0607E3C-34D0-445F-8ACF-A59B7419FD8B::net8.0::MTS_Diplom.Tests.SectionTest.DeleteTest&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B0607E3C-34D0-445F-8ACF-A59B7419FD8B::net8.0::MTS_Diplom.Tests.SectionTest.LimitValueTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e726d9de_002Dc8d0_002D4115_002Da246_002Df3ef5f5ff9ab/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetSectionTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;ProjectFolder&gt;B0607E3C-34D0-445F-8ACF-A59B7419FD8B/d:Tests&lt;/ProjectFolder&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e726d9de_002Dc8d0_002D4115_002Da246_002Df3ef5f5ff9ab/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetSectionTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;ProjectFolder&gt;B0607E3C-34D0-445F-8ACF-A59B7419FD8B/d:Tests&lt;/ProjectFolder&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

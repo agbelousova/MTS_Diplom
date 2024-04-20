@@ -119,40 +119,41 @@ public class SectionBasePage : BasePage
        return "error";
    }
    
-   /*
    public void AddFile()
    {
      //  try
      //  {
-           AddFileIcon.Click();
-           var fileUploadPath = WaitsHelper.WaitForExists(By.XPath("//input[@id='import']"));
-           Thread.Sleep(3000);
+           //AddFileIcon.Click();
+           //var fileUploadPath = WaitsHelper.WaitForExists(By.XPath("//input[@id='import']"));
+           //Thread.Sleep(3000);
            //AddNewFileButton.Click();
 
            string assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
            string filePath = Path.Combine(assemblyPath, "Resources", "test.jpeg");
 
-           fileUploadPath.SendKeys(filePath);
+           Driver.FindElements(By.XPath("//input[@type='file']"))[5].SendKeys(filePath);
+           //fileUploadPath.SendKeys(filePath);
           // Thread.Sleep(50000);
 
+           /*
            string puth = PuthFile.GetAttribute("id");
            Console.WriteLine($"Файл ---- {puth}");
            puth = puth.Replace("libraryAttachment-", "");
            Console.WriteLine($"Путь после удаления --{puth}");
            InputFile.SendKeys(puth);
            Console.WriteLine($"Value={InputFile.GetAttribute("value")}");
+          */
           // SelectUploadFile.Click();
            //WaitsHelper.WaitForExists(By.Id("attachmentNewSubmit")).Submit();
 
-           Assert.That(Driver.FindElement(DeleteFileButtonBy).Displayed);
+           //Assert.That(Driver.FindElement(DeleteFileButtonBy).Displayed);
 
-           AttachFileButton.Click();
-    //   }
+           //AttachFileButton.Click(); 
+   }
      /*  catch (Exception e)
        {
            Console.WriteLine("Файл не загружен!!!");
            throw;
        }
-
-   }*/
+       */
 }
