@@ -1,0 +1,6 @@
+2024/04/20 20:31:40.413|DEBUG|Get request to: index.php?/api/v2/get_milestone/{milestone_id} 
+2024/04/20 20:31:40.618|ERROR|Error retrieving response. Check inner details for more info. 
+Request failed with status code BadRequest 
+2024/04/20 20:31:40.618|DEBUG|Request finished with status code: BadRequest 
+2024/04/20 20:31:40.618|DEBUG|{"error":"Field :milestone_id is not a valid milestone."} 
+2024/04/20 20:31:40.618|INFO|True 
