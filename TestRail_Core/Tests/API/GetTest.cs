@@ -68,7 +68,7 @@ public class GetTest : BaseApiTest
 
         AllureApi.Step("AddCaseTest запущен.");
         
-        var caseNew = CaseService!.AddCase("190", _case);
+        var caseNew = CaseService!.AddCase("194", _case);
 
         _case = caseNew.Result;
         _logger.Info(_case.ToString());
