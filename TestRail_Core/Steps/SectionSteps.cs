@@ -1,5 +1,4 @@
-﻿using MTS_Diplom.Elements;
-using MTS_Diplom.Models;
+﻿using MTS_Diplom.Models;
 using MTS_Diplom.Pages.SectionPages;
 using NUnit.Allure.Attributes;
 using OpenQA.Selenium;
@@ -12,18 +11,16 @@ public class SectionSteps(IWebDriver driver) : BaseStep(driver)
     public SectionBasePage AddSection(Section _section)
     {
         SectionBasePage = new SectionBasePage(Driver, true);
-        
+
         //создание новой секции для тестов
         SectionBasePage.AddSectionButton.Click();
-        SectionBasePage.DescriptionSection.SendKeys(_section.Description);
-        
         //загрузка файла
         SectionBasePage.AddFile();
-        
+        Thread.Sleep(1000);
+        SectionBasePage.DescriptionSection.SendKeys(_section.Description);
         SectionBasePage.NameSection.SendKeys(_section.Name);
-        
         SectionBasePage.AddNewSectionButton.Click();
-        
+        Thread.Sleep(500);
         return new SectionBasePage(Driver);
     }
 
@@ -31,15 +28,13 @@ public class SectionSteps(IWebDriver driver) : BaseStep(driver)
     public string AddFaildSection(Section _section)
     {
         SectionBasePage = new SectionBasePage(Driver, true);
-        
+
         SectionBasePage.AddSectionButton.Click();
         SectionBasePage.DescriptionSection.SendKeys(_section.Description);
-       // Thread.Sleep(3000);
         SectionBasePage.AddNewSectionButton.Click();
-       // Thread.Sleep(3000);
         return SectionBasePage.GetErrorLabelText();
     }
-    
+
     [AllureStep]
     public string PopUpMessage()
     {

@@ -23,9 +23,7 @@ public class SectionTest: BaseTest
         };
 
         var sectionBasePage = _sectionSteps.AddSection(section);
-        Assert.That(sectionBasePage.FindNewSection(section.Name), Is.EqualTo(true));
-        
-        //Console.WriteLine(_sectionSteps.PopUpMessage()); 
+        Assert.That(sectionBasePage.FindNewSection(section.Name), Is.EqualTo(section.Name));
     }
 
     [Test]
@@ -41,7 +39,7 @@ public class SectionTest: BaseTest
     }
     
     [Test]
-    [Order(3)]
+    [Order(5)]
     [Category("Positive")]
     [AllureSubSuite("Successful Delete Section Test")]
     [AllureFeature("Positive GUI Tests")]
@@ -56,7 +54,8 @@ public class SectionTest: BaseTest
         };
 
         var sectionBasePage = _sectionSteps.AddSection(section);
-        sectionBasePage.DeleteIdSection(section);
+        Assert.That(sectionBasePage.FindNewSection(section.Name), Is.EqualTo(section.Name));
+        sectionBasePage.DeleteSection();
     }
     
     [Test]
@@ -87,7 +86,7 @@ public class SectionTest: BaseTest
     }
     
     [Test]
-    [Order(5)]
+    [Order(3)]
     [Category("Negative")]
     [AllureSubSuite("Failed Add Section Test")]
     [AllureFeature("Positive GUI Tests")]
@@ -101,6 +100,6 @@ public class SectionTest: BaseTest
                 {
                     Description = "Description"
                 }), 
-            Is.EqualTo("Field Name is a required field."));
+            Is.EqualTo("Field Name is a required field.1"));
     }
 }
