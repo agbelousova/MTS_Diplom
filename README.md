@@ -1,1 +1,0 @@
-# MTS_Diplom
