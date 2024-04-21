@@ -1,2 +1,0 @@
-New Test Section61
-Opens a print view of this test case repository.
