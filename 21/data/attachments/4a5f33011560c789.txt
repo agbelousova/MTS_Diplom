@@ -1,0 +1,9 @@
+  Assert.That(_sectionSteps
+                .AddFaildSection(new Section()
+                {
+                    Description = "Description"
+                }), Is.EqualTo("Field Name is a required field.1"))
+  Expected string length 32 but was 31. Strings differ at index 31.
+  Expected: "Field Name is a required field.1"
+  But was:  "Field Name is a required field."
+  ------------------------------------------^
