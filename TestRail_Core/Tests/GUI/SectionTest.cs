@@ -1,13 +1,17 @@
 ﻿using MTS_Diplom.Models;
+using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 
 namespace MTS_Diplom.Tests;
 
+[AllureSuite("GUI Tests")]
 public class SectionTest: BaseTest
 {
     [Test]
     [Order(1)]
     [Category("Positive")]
+    [AllureSubSuite("Successful Add Section Test")]
+    [AllureFeature("Positive GUI Tests")]
     public void SuccessfulAddSectionTest()
     {
         _navigationSteps.SuccessfulLogin(Admin);
@@ -19,25 +23,26 @@ public class SectionTest: BaseTest
         };
 
         var sectionBasePage = _sectionSteps.AddSection(section);
-        Assert.That(sectionBasePage.FindNewSection(section.Name), Is.EqualTo(true));
-        
-        Console.WriteLine(_sectionSteps.PopUpMessage()); 
+        Assert.That(sectionBasePage.FindNewSection(section.Name), Is.EqualTo(section.Name));
     }
 
     [Test]
     [Order(2)]
     [Category("Positive")]
+    [AllureSubSuite("Successful PopUp Message Test")]
+    [AllureFeature("Positive GUI Tests")]
     public void PopUpMessageTest()
     {
         _navigationSteps.SuccessfulLogin(Admin);
         
         Assert.That(_sectionSteps.PopUpMessage(), Is.EqualTo("Opens a print view of this test case repository."));
     }
-
-    /*
+    
     [Test]
-    [Order(3)]
+    [Order(5)]
     [Category("Positive")]
+    [AllureSubSuite("Successful Delete Section Test")]
+    [AllureFeature("Positive GUI Tests")]
     public void DeleteSectionTest()
     {
         _navigationSteps.SuccessfulLogin(Admin);
@@ -49,13 +54,15 @@ public class SectionTest: BaseTest
         };
 
         var sectionBasePage = _sectionSteps.AddSection(section);
-        sectionBasePage.DeleteSection(section.Name);
+        Assert.That(sectionBasePage.FindNewSection(section.Name), Is.EqualTo(section.Name));
+        sectionBasePage.DeleteSection();
     }
-    */
     
     [Test]
     [Order(4)]
     [Category("Negative")]
+    [AllureSubSuite("Successful Limit Value Test")]
+    [AllureFeature("Negative GUI Tests")]
     public void LimitValueTest()
     {
         _navigationSteps.SuccessfulLogin(Admin);
@@ -67,7 +74,6 @@ public class SectionTest: BaseTest
             ,
             Description = "Description 123"
         };
-
         var sectionBasePage = _sectionSteps.AddSection(section);
         
         if (sectionBasePage.FindNameSection(section) == "error")
@@ -80,13 +86,15 @@ public class SectionTest: BaseTest
     }
     
     [Test]
-    [Order(5)]
+    [Order(3)]
     [Category("Negative")]
+    [AllureSubSuite("Failed Add Section Test")]
+    [AllureFeature("Positive GUI Tests")]
     public void FailedAddSectionTest()
     {
         _navigationSteps.SuccessfulLogin(Admin);
-        
-        Assert.That(
+
+            Assert.That(
             _sectionSteps
                 .AddFaildSection(new Section()
                 {

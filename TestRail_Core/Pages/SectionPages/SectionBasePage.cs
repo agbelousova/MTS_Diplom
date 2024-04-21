@@ -1,4 +1,5 @@
-﻿using MTS_Diplom.Elements;
+﻿using System.Reflection;
+using MTS_Diplom.Elements;
 using MTS_Diplom.Models;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
@@ -25,9 +26,19 @@ public class SectionBasePage : BasePage
     private static readonly By DeleteSectionButtonBy = By.ClassName("icon-small-delete");
     private static readonly By DeleteCheckboxBy = By.CssSelector("[data-testid='caseFieldsTabDeleteDialogCheckbox']");
     private static readonly By ErrorMessageBy = By.Id("editSectionErrors");
+
+    //для вставки value файла
+    private static readonly By InputFileBy = By.Id("newAttachments");
+
+    //элемент в котором хранится код вставляемого файла
+    private static readonly By PuthFileBy =
+        By.XPath("//div[@id='attachmentsNewList']//div[contains(@id,'libraryAttachment-')]");
+
+
     public SectionBasePage(IWebDriver driver) : base(driver)
     {
     }
+
     public SectionBasePage(IWebDriver driver, bool openPageByUrl) : base(driver, openPageByUrl)
     {
     }
@@ -46,14 +57,16 @@ public class SectionBasePage : BasePage
     public Button DeleteFileButton => new(Driver, DeleteFileButtonBy);
     public Button AttachFileButton => new(Driver, AttachFileButtonBy);
     public UIElement SelectUploadFile => new(Driver, SelectUploadFileBy);
-    public Button DeleteSectionButton => new(Driver, DeleteSectionButtonBy);
+    public UIElement DeleteSectionButton => new(Driver, DeleteSectionButtonBy);
     public UIElement DeleteCheckbox => new(Driver, DeleteCheckboxBy);
     public UIElement ErrorMessage => new(Driver, ErrorMessageBy);
     public string GetErrorLabelText() => WaitsHelper.WaitForVisibilityLocatedBy(ErrorMessageBy).Text.Trim();
-    
+    public UIElement InputFile => new(Driver, InputFileBy);
+    public UIElement PuthFile => new(Driver, PuthFileBy);
     public UIElement PopUpMessage => new(Driver, PopUpMessageBy);
+
     //методы
-    public bool FindNewSection(string nameSection)
+    public string FindNewSection(string nameSection)
     {
         bool flag = false;
         foreach (var text in SectionNewTitle.GetText())
@@ -61,13 +74,29 @@ public class SectionBasePage : BasePage
             if (text == nameSection)
             {
                 flag = true;
+                return text;
                 Console.WriteLine(text);
             }
         }
 
-        return flag;
+        return "error";
     }
-    
+    public void DeleteSection()
+    {
+        var actions = new Actions(Driver);
+
+        actions
+            .MoveToElement(Driver.FindElement(By.CssSelector("[class^='grid-title']")))
+            //.Click(WaitsHelper.WaitForVisibilityLocatedBy(By.CssSelector("[class^='icon-small-delete']")))
+            .Build()
+            .Perform();
+
+        WaitsHelper.WaitForVisibilityLocatedBy(By.CssSelector("[class^='icon-small-delete']")).Click();
+        DeleteCheckbox.Click();
+        WaitsHelper.WaitForVisibilityLocatedBy(
+            By.CssSelector("[data-testid='caseFieldsTabDeleteDialogButtonOk']")).Click();
+    }
+
     public string FindNameSection(Section section)
     {
         foreach (var name in SectionNewTitle.GetText())
@@ -77,43 +106,18 @@ public class SectionBasePage : BasePage
                 return name;
             }
         }
+
         return "error";
     }
-    public void DeleteSection(string name)
-    {
-        var actions = new Actions(Driver);
-//MoveToElement(WaitsHelper.FluentWaitForElement(By.XPath($"//span[@class = 'title' and contains(text(),'{name}')]/parent::div[@class='grid-title']")))
-        actions
-            .MoveToElement(WaitsHelper.FluentWaitForElement(By.CssSelector("[class^='grid-title']")))
-            .Click(WaitsHelper.WaitForVisibilityLocatedBy(By.CssSelector("[class^='icon-small-delete']")))
-            .Build()
-            .Perform();
-        
-        DeleteCheckbox.Click();
-        WaitsHelper.WaitForVisibilityLocatedBy(By.CssSelector("[data-testid='caseFieldsTabDeleteDialogButtonOk']")).Click();
-    }
-    
-    /*
+
     public void AddFile()
     {
         try
         {
-            AddFileIcon.Click();
-            var fileUploadPath = WaitsHelper.WaitForExists(By.XPath("//input[@id='import']"));
-            Thread.Sleep(3000);
-            //AddNewFileButton.Click();
-
             string assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             string filePath = Path.Combine(assemblyPath, "Resources", "test.jpeg");
 
-            fileUploadPath.SendKeys(filePath);
-            Thread.Sleep(3000);
-            //SelectUploadFile.Click();
-            //WaitsHelper.WaitForExists(By.Id("attachmentNewSubmit")).Submit();
-
-            // Assert.That(Driver.FindElement(DeleteFileButtonBy).Displayed);
-
-            AttachFileButton.Click();
+            Driver.FindElements(By.XPath("//input[@type='file']"))[5].SendKeys(filePath);
         }
         catch (Exception e)
         {
@@ -121,5 +125,4 @@ public class SectionBasePage : BasePage
             throw;
         }
     }
-    */
 }

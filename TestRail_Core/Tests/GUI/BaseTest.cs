@@ -1,3 +1,5 @@
+using System.Text;
+using Allure.Net.Commons;
 using MTS_Diplom.Core;
 using MTS_Diplom.Helpers.Configurator;
 using MTS_Diplom.Models;
@@ -40,7 +42,7 @@ public class BaseTest
     [TearDown]
     public void TearDown()
     {
-        /*
+        
         // Проверка, был ли тест сброшен
         try
         {
@@ -51,7 +53,9 @@ public class BaseTest
                 byte[] screenshotBytes = screenshot.AsByteArray;
 
                 // Прикрепление скриншота к отчету Allure
-                AllureLifecycle.Instance.AddAttachment("Screenshot", "image/png", screenshotBytes);
+                //AllureLifecycle.Instance.AddAttachment("Screenshot", "image/png", screenshotBytes);
+                AllureApi.AddAttachment("Screenshot", "image/png", screenshotBytes);
+                AllureApi.AddAttachment("error.txt", "text/plain", Encoding.UTF8.GetBytes(TestContext.CurrentContext.Result.Message));
             }
         }
         catch (Exception e)
@@ -59,7 +63,7 @@ public class BaseTest
             Console.WriteLine(e);
             throw;
         }
-        */
+        
         Driver.Quit();
     }
 }
