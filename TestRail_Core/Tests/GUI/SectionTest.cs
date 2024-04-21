@@ -100,6 +100,6 @@ public class SectionTest: BaseTest
                 {
                     Description = "Description"
                 }), 
-            Is.EqualTo("Field Name is a required field.1"));
+            Is.EqualTo("Field Name is a required field."));
     }
 }
