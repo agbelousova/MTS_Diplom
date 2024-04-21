@@ -1,0 +1,5 @@
+2024/04/21 11:00:17.343|DEBUG|Get request to: index.php?/api/v2/get_milestone/{milestone_id} 
+2024/04/21 11:00:17.546|DEBUG|Request finished with status code: OK 
+2024/04/21 11:00:17.546|DEBUG|{"id":1,"name":"Release 1.5","description":null,"start_on":null,"started_on":1713003084,"is_started":true,"due_on":null,"is_completed":false,"completed_on":null,"project_id":1,"parent_id":null,"refs":"","url":"https:\/\/svist.testrail.io\/index.php?\/milestones\/view\/1","milestones":[]} 
+2024/04/21 11:00:17.546|INFO|RestSharp.RestResponse 
+2024/04/21 11:00:17.548|INFO|TestRailComplexApi.Models.Milestone 
