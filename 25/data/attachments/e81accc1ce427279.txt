@@ -1,0 +1,7 @@
+2024/04/23 15:56:10.463|DEBUG|Post request to: index.php?/api/v2/add_case/{section_id} 
+2024/04/23 15:56:10.463|DEBUG|body: MTS_Diplom.Models.Case 
+2024/04/23 15:56:10.755|ERROR|Error retrieving response. Check inner details for more info. 
+Request failed with status code BadRequest 
+2024/04/23 15:56:10.755|DEBUG|Request finished with status code: BadRequest 
+2024/04/23 15:56:10.755|DEBUG|{"error":"Field :section_id is not a valid section."} 
+2024/04/23 15:56:10.755|INFO|MTS_Diplom.Models.Case 

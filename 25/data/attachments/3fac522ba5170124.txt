@@ -1,0 +1,15 @@
+2024/04/23 15:56:08.986|INFO|{
+  "name": "Section for TK",
+  "id": 194,
+  "description": "Description 1",
+  "suite_id": 1,
+  "depth": 0,
+  "display_order": 33
+} 
+2024/04/23 15:56:09.006|INFO|Section { Name = Section for TK, Id = 194, Description = Description 1, SuiteId = 0, DisplayOrder = , Depth = 0 } 
+2024/04/23 15:56:09.027|DEBUG|Get request to: index.php?/api/v2/get_section/{section_id} 
+2024/04/23 15:56:09.555|ERROR|Error retrieving response. Check inner details for more info. 
+Request failed with status code BadRequest 
+2024/04/23 15:56:09.555|DEBUG|Request finished with status code: BadRequest 
+2024/04/23 15:56:09.555|DEBUG|{"error":"Field :section_id is not a valid section."} 
+2024/04/23 15:56:09.555|INFO|RestSharp.RestResponse 

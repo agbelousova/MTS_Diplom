@@ -1,0 +1,2 @@
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at MTS_Diplom.Tests.BaseTest.TearDown() in /home/runner/work/MTS_Diplom/MTS_Diplom/TestRail_Core/Tests/GUI/BaseTest.cs:line 52

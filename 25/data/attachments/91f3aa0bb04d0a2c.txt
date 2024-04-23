@@ -1,0 +1,7 @@
+2024/04/23 15:56:11.030|DEBUG|Post request to: index.php?/api/v2/delete_case/{case_id} 
+2024/04/23 15:56:11.030|DEBUG|body: {} 
+2024/04/23 15:56:11.318|ERROR|Error retrieving response. Check inner details for more info. 
+Request failed with status code BadRequest 
+2024/04/23 15:56:11.318|DEBUG|Request finished with status code: BadRequest 
+2024/04/23 15:56:11.318|DEBUG|{"error":"Field :case_id is not a valid test case."} 
+2024/04/23 15:56:11.318|INFO|BadRequest 

@@ -1,0 +1,6 @@
+2024/04/23 15:56:10.761|DEBUG|Get request to: index.php?/api/v2/get_case/{case_id} 
+2024/04/23 15:56:11.024|ERROR|Error retrieving response. Check inner details for more info. 
+Request failed with status code BadRequest 
+2024/04/23 15:56:11.024|DEBUG|Request finished with status code: BadRequest 
+2024/04/23 15:56:11.024|DEBUG|{"error":"Field :case_id is not a valid test case."} 
+2024/04/23 15:56:11.024|INFO|RestSharp.RestResponse 
